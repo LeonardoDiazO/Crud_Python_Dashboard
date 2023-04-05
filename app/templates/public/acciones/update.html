@@ -7,7 +7,7 @@
 <section>
     <h2>
         <a href="/" class="left" title="Volver"><i class="bi bi-arrow-left-circle"></i></a>
-        Actualizar Información de la Herramienta
+        Actualizar Información de las Herramientas
         <hr>
     </h2>
 
@@ -17,83 +17,44 @@
         
         <div class="row">
             <div class="col">
-                <label for="marca">Marca</label>
-                <input type="text" name="marca" value="{{ dataInfo.marca }}" class="form-control">
+                <label for="articulo">Articulo</label>
+                <input type="text" name="articulo" value="{{ dataInfo.articulo }}" class="form-control">
             </div>
             <div class="col">
-                <label for="modelo">Modelo</label>
-                <input type="text" name="modelo" value="{{ dataInfo.modelo }}" class="form-control">
+                <label for="description">Descripción</label>
+                <input type="text" name="description" value="{{ dataInfo.description }}" class="form-control">
             </div>
         </div>
 
         <div class="row">
             <div class="col">
-                <label for="year">Año</label>
-                <input type="number" name="year" value="{{ dataInfo.year }}" class="form-control">
+                <label for="direccion">Direccion</label>
+                <input type="text" name="direccion" value="{{ dataInfo.direccion }}" class="form-control">
             </div>
 
             <div class="col">
-                <label for="color">Color</label>
-                {% with  colores = ["Rojo","Gris","Blanco","Plata"] %}
-                <select name="color" class="form-control">
-                    {% for color in colores %}
-                        {% if(color == dataInfo.color) %}
-                            <option value="{{ color }}" selected>{{ color }}</option>
-                        {% else %}
-                            <option value="{{ color }}">{{ color }}</option>
-                        {% endif %}
-                    {% endfor %}
-                </select>
-                {% endwith %}
+                <label for="telefono">Telefono</label>
+                <input type="text" name="telefono" value="{{ dataInfo.telefono }}" class="form-control">
+                
             </div>
         </div>
 
         
         <div class="row">
             <div class="col">
-                <label for="puertas">Numeros de Puertas</label>
-                {% with  puertas = ['2','4'] %}
-                <select name="puertas" class="form-control">
-                    {% for puerta in puertas %}
-                        {% if(puerta == dataInfo.puertas) %}
-                            <option value="{{ puerta }}" selected> {{ puerta }}</option>
-                        {% else %}
-                            <option value="{{ puerta }}"> {{ puerta }}</option>
-                        {% endif %}
-                    {% endfor %}
-                </select>
-                {% endwith %}
+                <label for="precio">Precio</label>
+                <input type="text" name="precio" value="{{ dataInfo.precio }}" class="form-control">
+               
             </div>
 
             <div class="col">
-                <label for="favorito">Favorito</label>
+                <label for="fecha">Fecha</label>
+                <input type="date" name="fecha" value="{{ dataInfo.fecha }}" class="form-control">
                 <br><br>
-                <div class="form-check form-check-inline">
-
-                    <input class="form-check-input" type="radio" name="favorito" value="Si" {{ dataInfo.favorito =='Si' and 'checked' or '' }}>
-                    <label class="form-check-label" for="favorito">Si</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="favorito" value="No" {{ 'checked' if dataInfo.favorito =='No' else '' }}>
-                    <label class="form-check-label" for="favorito">No</label>
-                </div>
+               
             </div>
         </div>
 
-        <div class="row">
-            {% set urlCarro = '/static/assets/fotos_carros/' %}
-            <div class="col-md-6">
-                {% if(dataInfo.foto !="") %}
-                        <img src="{{ urlCarro }}{{ dataInfo.foto }}" class="foto_update" alt="{{ dataInfo.marca }}">
-                    {% else %}
-                        <img src="{{ urlCarro }}sin_foto.jpg" class="foto_update" alt="coche">
-                {% endif %}
-            </div>
-            <div class="col-md-6">
-                <label for="foto">Cambiar Foto del Carro</label>
-                <input type="file" name="foto" class="form-control-file" accept="image/*">
-            </div>
-        </div>
         <hr>
         <input class="button-primary mt-3 btn btn-info btn-block bold" type="submit" value="Guardar Actualización">
     </form>
@@ -101,7 +62,7 @@
       {% else %}
       <div class="col-12">
           <h2 class="text-center">
-              No existe el Coche
+              No existen fotos de las herramientas
           </h2>
       </div>
 {% endif %}

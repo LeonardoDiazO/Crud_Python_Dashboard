@@ -7,74 +7,51 @@
 <section>
     <h2>
         <a href="/" class="left" title="Volver"><i class="bi bi-arrow-left-circle"></i></a>
-        Registrar Nuevo Herramienta
+        Registrar Nueva Herramienta
         <hr>
     </h2>
 
     <form action="{{ url_for('formAddHerramienta') }}" method="POST" class="mb-3" autocomplete="off" enctype="multipart/form-data">
         <div class="row">
             <div class="col">
-                <label for="marca">Marca</label>
-                <input type="text" name="marca" class="form-control" required>
+                <label for="articulo">Articulo</label>
+                <input type="text" name="articulo" class="form-control" required>
             </div>
             <div class="col">
-                <label for="modelo">Modelo</label>
-                <input type="text" name="modelo" class="form-control" required>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <label for="year">Año</label>
-                <select name="year" class="form-control" required>
-                    <option value="">--- Seleccione el año ---</option>
-                    {% for year in range(2022,2009,-1) %}
-                        <option value="{{ year }}"> {{ year }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <div class="col">
-                <label for="color">Color</label>
-                <select name="color" class="form-control" required>
-                    <option value="">--- Seleccione el Color ---</option>
-                    <option value="Rojo">Rojo</option>
-                    <option value="Gris">Gris</option>
-                    <option value="Blanco">Blanco</option>
-                    <option value="Plata">Plata</option>
-                </select>
+                <label for="description">Descripción</label>
+                <input type="text" name="description" class="form-control" required>
             </div>
         </div>
 
         <div class="row">
             <div class="col">
-                <label for="puertas">Numeros de Puertas</label>
-                <select name="puertas" class="form-control" required>
-                    <option value="">--- Seleccione las Puertas ---</option>
-                    <option value="2">2</option>
-                    <option value="4">4</option>
-                </select>
+                <label for="direccion">Dirección</label>
+                <input type="text" name="direccion" class="form-control" required>
+                
+            </div>
+            <div class="col">
+                <label for="telefono">Telefono</label>
+                <input type="text" name="telefono" class="form-control" required>
+                
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="precio">Precio</label>
+                <input type="text" name="precio" class="form-control" required>
+                
             </div>
 
             <div class="col">
-                <label for="puertas">Más Vendido</label>
+                <label for="fecha">Fecha</label>
+                <input type="date" name="fecha" class="form-control" required>
                 <br><br>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="favorito" value="Si" checked>
-                    <label class="form-check-label" for="favorito">Si</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="favorito" value="No">
-                    <label class="form-check-label" for="favorito">No</label>
-                </div>
+                
             </div>
         </div>
 
-        <div class="row mt-4">
-            <div class="col">
-                <label for="foto">Foto del Carro</label>
-                <input type="file" name="foto" class="form-control-file" accept="image/*" required>
-            </div>
-        </div>
+       
         <hr>
 
         <input class="button-primary mt-3 btn btn-info btn-block bold" type="submit" value="Guardar Registro">
